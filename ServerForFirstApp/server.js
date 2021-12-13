@@ -54,13 +54,13 @@ app.post("/delete", (req, res) => {
 
 //UPDATE A NOTE
 //POST request
-app.post("/update", (req, res) => {
+app.post('/update', (req, res) => {
     Data.findOneAndUpdate({
         _id: req.get("id")
     }, {
         note: req.get("note"),
-        title: req.get("note"),
-        date: req.get("note")
+        title: req.get("title"),
+        date: req.get("date")
     }, (err) => {
         console.log("Failed to update " + err)
     })
