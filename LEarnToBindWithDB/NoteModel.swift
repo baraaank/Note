@@ -7,15 +7,9 @@
 
 import Foundation
 
-
-//struct Note: Codable {
-//    let _ = [NoteModel]
-//}
-
-
 struct NoteModel: Codable {
-    let _id: String
-    let note: String
-    let title: String
-    let date: String
+    let _id: String?
+    let note: String?
+    let title: String?
+    let date: String?
 }

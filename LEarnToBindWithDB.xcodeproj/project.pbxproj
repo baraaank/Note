@@ -16,6 +16,8 @@
 		8126DF712757A9DA00B1AF21 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126DF702757A9DA00B1AF21 /* NoteManager.swift */; };
 		8126DF742757AC7C00B1AF21 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126DF732757AC7C00B1AF21 /* NoteModel.swift */; };
 		8126DF772757F64500B1AF21 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126DF762757F64500B1AF21 /* NoteCell.swift */; };
+		81370BC22760E2C5003E7FC2 /* CellDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81370BC12760E2C5003E7FC2 /* CellDetailViewController.swift */; };
+		81370BC52760E2D1003E7FC2 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81370BC42760E2D1003E7FC2 /* AddNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		8126DF702757A9DA00B1AF21 /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		8126DF732757AC7C00B1AF21 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		8126DF762757F64500B1AF21 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		81370BC12760E2C5003E7FC2 /* CellDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailViewController.swift; sourceTree = "<group>"; };
+		81370BC42760E2D1003E7FC2 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				8126DF5B2757A6C900B1AF21 /* AppDelegate.swift */,
 				8126DF5D2757A6C900B1AF21 /* SceneDelegate.swift */,
 				8126DF5F2757A6C900B1AF21 /* ViewController.swift */,
+				81370BC42760E2D1003E7FC2 /* AddNoteViewController.swift */,
+				81370BC12760E2C5003E7FC2 /* CellDetailViewController.swift */,
 				8126DF612757A6CA00B1AF21 /* Main.storyboard */,
 				8126DF642757A6CC00B1AF21 /* Assets.xcassets */,
 				8126DF662757A6CC00B1AF21 /* LaunchScreen.storyboard */,
@@ -150,7 +156,9 @@
 				8126DF602757A6C900B1AF21 /* ViewController.swift in Sources */,
 				8126DF712757A9DA00B1AF21 /* NoteManager.swift in Sources */,
 				8126DF772757F64500B1AF21 /* NoteCell.swift in Sources */,
+				81370BC52760E2D1003E7FC2 /* AddNoteViewController.swift in Sources */,
 				8126DF5C2757A6C900B1AF21 /* AppDelegate.swift in Sources */,
+				81370BC22760E2C5003E7FC2 /* CellDetailViewController.swift in Sources */,
 				8126DF5E2757A6C900B1AF21 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

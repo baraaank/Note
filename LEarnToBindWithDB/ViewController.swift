@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, NoteManagerDelegate {
+class ViewController: UIViewController, NoteManagerDelegate, UINavigationControllerDelegate {
     
     func didNoteFetch(note: String) {
         let decoder = JSONDecoder()
         do {
             notesArray = try decoder.decode([NoteModel].self, from: note.data(using: .utf8)!)
-//            print(notesArray)
         } catch {
             print(error)
         }
@@ -23,19 +22,8 @@ class ViewController: UIViewController, NoteManagerDelegate {
         
     }
     
-    
-//    func didNoteFetch(note: [NoteModel]) {
-//        var notes = note.map { $0.date }
-//        print(notes[0])
-//
-////        notesArray.append(contentsOf: note)
-////        print(note[0].title)
-//        self.tableView.reloadData()
-//    }
-//
     var notesArray = [NoteModel]()
     
-   // var noteManager = NoteManager()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -43,27 +31,22 @@ class ViewController: UIViewController, NoteManagerDelegate {
         return tableView
     }()
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//
-////       noteManager.fetchNotes()
-//
-//    }
-//
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Notes"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Note", style: .done, target: self, action: #selector(addNotePressed))
+        
         
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         NoteManager.shared.delegate = self
         NoteManager.shared.fetchNotes()
-//        print(notesArray)
         
-//        print(notesArray)
-        
-
-        
+        navigationController?.delegate = self
         
         
     }
@@ -74,11 +57,16 @@ class ViewController: UIViewController, NoteManagerDelegate {
     
     
     
+    @objc func addNotePressed() {
+        let vc = AddNoteViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return notesArray.count
         
     }
@@ -86,19 +74,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.accessoryType = .checkmark
-        cell.indentationLevel = 5
-        cell.editingStyle
+        cell.indentationLevel = 2
         
         cell.textLabel?.text = notesArray[indexPath.row].title
         cell.detailTextLabel?.text = notesArray[indexPath.row]._id
         print(notesArray[indexPath.row]._id)
-        
-        
-//        cell.textLabel?.text = "sa"
-//        cell.textLabel?.text = notesArray[indexPath.row].date
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = CellDetailViewController()
+        vc.note = notesArray[tableView.indexPathForSelectedRow!.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     
 }
